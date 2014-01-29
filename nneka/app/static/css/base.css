@@ -16,18 +16,24 @@ body, html{
 	float: right;
 	padding:5px;
 }
-
-#nav{
-	float:right;
-	margin-right: 20px;
+#logo{
+	display: block;
+	margin: auto;
+	width:33%;
 }
 #nav ul{
 	list-style: none;
+	float:right;
+	margin-right: 20px;
 }
 #nav ul li{
 	display: inline-block;
 }
-
+#site_name{
+	display: inline-block;
+	margin-top: 15px;
+	padding:0 0 0 40px;
+}
 #slideshow{
 	background: url('/images/shop.jpg') 0 0 no-repeat fixed;
 	background-size: cover;
@@ -41,7 +47,7 @@ body, html{
 	margin:auto;
 	position: relative;
 	top:200px;
-	width:40%;
+	width:38%;
 }
 #testimonials,
 #business_info{

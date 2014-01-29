@@ -11,19 +11,18 @@ html
 		div class="pure-g-r"
 			div class="pure-u-1"
 				div id="nav"
+					span id="site_name" ClassySassyStyles
 					ul
 						li: a href="/" Home
 						li: a href="/" About
 						li: a href="/" Portfolio
 						li: a href="/" Rates
 						li: a href="/" Contact
+
 			div class="pure-u-1"
-				div id="slideshow"
-					div id="slogan"
-						| Get right with get right!
-			== yield
+				== yield
 
 			div class="pure-u-1"
 				div id="footer"
 					span
-						| &copy; #{Time.now.year}
+						| &copy; #{Time.now.year}	
