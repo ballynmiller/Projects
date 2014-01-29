@@ -1,0 +1,12 @@
+- unless photos.empty?
+	div id="images"
+		- for photo in photos do
+			div class="image-container"
+				img src="#{photo}" class="item"
+javascript:
+	$(window).load(function(){
+		$('#images').masonry({
+			itemSelector: '.item',
+			columnWidth: 154
+		});
+	}); 
