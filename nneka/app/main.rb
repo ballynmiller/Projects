@@ -20,9 +20,9 @@ get '/about' do
 end 
 
 get '/portfolio/:album_name' do |a|
-	if Dir.exists?("static/images/#{a}")
+	if Dir.exists?(File.dirname(__FILE__) + "/static/images/#{a}")
 		photos = []
-		for photo in Dir.glob("static/images/#{a}/*.*") do
+		for photo in Dir.glob(File.dirname(__FILE__) + "/static/images/#{a}/*.*") do
 			photos.push(photo[/\/images\/.*/])
 		end
 		slim :_photos, :locals => {:photos => photos}

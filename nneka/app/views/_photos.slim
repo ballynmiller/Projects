@@ -1,8 +1,8 @@
 - unless photos.empty?
 	div id="images"
 		- for photo in photos do
-			div class="image-container"
-				img src="#{photo}" class="item"
+			img src="#{photo}" class="item" width="300"
+
 javascript:
 	$(window).load(function(){
 		$('#images').masonry({
