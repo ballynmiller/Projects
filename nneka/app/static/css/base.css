@@ -1,70 +1,209 @@
-#info_row .pure-u-1-3{
-	width: 33%;
+*{
+	padding: 0;
+	margin: 0;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    margin: 0 0 40px; /* bottom = footer height */
+html, body{
+	height: 100%;
 }
 
-#footer{
-	background: #666;
-	height: 30px;
-	margin-top: 10px;
-	position:absolute;
-	bottom:	0;
-	left: 0;
-	width:100%;
-}
-#footer span{
-	letter-spacing: 0;
-	float: right;
-	padding:5px;
-}
-#logo{
+.pure-g-r{
 	display: block;
-	margin: auto;
-	width:33%;
+	min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -36px;
 }
-#nav ul{
-	list-style: none;
-	float:right;
-	margin-right: 20px;
+
+.left{
+	float: left;
 }
-#nav ul li{
-	display: inline-block;
+
+#info_row{
+	background: #fafafa;
+	padding: 5px 0 0;
 }
-#site_name{
-	display: inline-block;
-	margin-top: 15px;
-	padding:0 0 0 40px;
+
+.info_text{
+	padding: 0 20px;
 }
-#slideshow{
-	background: url('/images/shop.jpg') 0 0 no-repeat fixed;
-	background-size: cover;
-	height:450px;
-	margin-bottom: 15px;
+
+footer{
+	background: #666;
+	height: 150px;
 }
-#slideshow #slogan{
-	color: #fff;
-	font-size: 3em;
-	text-shadow: 1px 1px #000;
-	margin:auto;
-	position: relative;
-	top:200px;
-	width:38%;
+
+.business_info{
+	background: url('/img/bg.png');
 }
-#testimonials,
-#business_info{
-	padding: 10px;
-}
-#business_info div{
+
+.content{
+	display: block;
+	height: 450px;
 	text-align: center;
 }
-#testimonials:first-letter{
-	font-size: 30px;
-	padding:10px;
+
+.content div.pure-u-2-5{
+	background: #fafafa;
+	height: 430px;
+	margin:10px 25px;
+	overflow: hidden;
+}
+
+#content_wrapper{
+	padding: 0 0 36px 0;
+}
+
+#copyright{
+	color: #fafafa;
+	padding: 6px;
+	text-align: center;
+}
+
+footer *{
+	letter-spacing: 0;
+}
+
+nav{
+	background: #3f3e3e;
+	box-shadow: 0 1px 30px 0 #000;
+	height: 50px;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+}
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-right: 20px;
+}
+
+nav ul li{
+	display: inline-table;
+	padding: 16px 20px;
+}
+
+nav ul li a{
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+nav ul li:hover,
+nav ul li.selected{
+	background: #af0165;
+}
+
+nav ul li:hover ul{
+	display: block;
+}
+
+nav ul ul{
+	border-top: 4px solid #af0165;
+	display: none;
+	position: absolute;
+	margin: 0;
+	margin-top: 16px;
+	margin-left: -20px;
+}
+
+nav ul ul li{
+	background: #3f3e3e;
+	display: block;
+	padding: 4px 20px;
+	text-align: center;
+}
+
+nav ul ul li a:hover{
+	border: none;
+}
+
+nav ul ul li:hover{
+	background: #515050;
+}
+
+#about_container{
+}
+
+#about_container p{
+	padding: 0 10px;
+}
+
+#portfolio_img{
+	background: url('/images/me.jpg') bottom;
+	display: table;
+	width: 100%;
+}
+
+#portfolio_img .title{
+	display: table-cell;
+	font-weight: bolder;
+	height: 360px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+#site_name{
+	color: #fff;
+	padding: 14px;
+	text-shadow: -1px 0 rgba(0,0,0,0.5);
+}
+
+#slideshow{
+	background: url('/images/staff_cropped.png') center;
+	background-size: cover;
+	box-shadow: 0 2px 30px 0 #000 inset;
+	display: table;
+	width: 100%;
+	height: 600px;
+}
+
+.slideshow_container{
+	background: #666;
+}
+
+#slogan{
+	color: #af0165;
+	display: table-cell;
+	font-size: 60px;
+	height: 190px;
+	opacity: 0.7;
+	text-align: center; 
+	text-shadow: 1px -1px #000;
+	vertical-align: bottom;
+}
+
+#store_container div.pure-u-1-2{
+	width: 48%;
+}
+
+#store_hours{
+	margin: auto;
+	text-align: left;
+	width: 72%;
+}
+
+#store_info{
+	margin-top: 70px;
+	padding: 10px 0;
+}
+
+#store_img{
+	background: url('/images/store.jpg') top center;
+	background-size: cover;
+	height: 192px;
+}
+
+.title{
+	color: #af0165;
+	font-size: 20px;
+	text-align: center;
+	padding: 10px 5px;
+}
+
+.right{
+	float: right;
 }

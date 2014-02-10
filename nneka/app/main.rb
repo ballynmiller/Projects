@@ -1,42 +1,46 @@
 # main rb for the site
-require 'sinatra'
-require 'sinatra/reloader' if development?
+require 'sinatra/base'
 require 'slim'
 
 require_relative 'helpers/help'
 
-# update public folder 
-set :public_folder, File.dirname(__FILE__) + '/static'
+class Portfolio < Sinatra::Base
 
-#config slim
-Slim::Engine.default_options[:pretty] = true
+	include Sinatra::Help
 
+	# update public folder 
+	set :public_folder, File.dirname(__FILE__) + '/static'
 
-get '/' do
-	slim :index
-end
+	#config slim
+	Slim::Engine.default_options[:pretty] = true
 
-get '/about' do
-end 
-
-get '/portfolio/:album_name' do |a|
-	if Dir.exists?(File.dirname(__FILE__) + "/static/images/#{a}")
-		photos = []
-		for photo in Dir.glob(File.dirname(__FILE__) + "/static/images/#{a}/*.*") do
-			photos.push(photo[/\/images\/.*/])
-		end
-		slim :_photos, :locals => {:photos => photos}
-	else
-		halt 404
+	get '/' do
+		slim :index
 	end
-end
 
-get '/rates' do
-end
+	get '/about' do
+		slim :about
+	end 
 
-get '/contact' do
-end
+	get '/portfolio/:album_name' do |a|
+		if Dir.exists?(File.dirname(__FILE__) + "/static/images/#{a}")
+			photos = []
+			for photo in Dir.glob(File.dirname(__FILE__) + "/static/images/#{a}/*.*") do
+				photos.push(photo[/\/images\/.*/])
+			end
+			slim :_photos, :locals => {:photos => photos}
+		else
+			halt 404
+		end
+	end
 
-error 404 do
-	'Not Found'
+	get '/rates' do
+	end
+
+	get '/contact' do
+	end
+
+	error 404 do
+		'Not Found'
+	end
 end
