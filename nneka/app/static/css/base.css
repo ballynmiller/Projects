@@ -12,12 +12,12 @@ body {
 	font-style: italic;
 	padding: 15px;
 }
-#business_info{
-	float: left;
-	padding: 27px 0;
+#bussiness_info{
+	padding: 0 5px;	
 }
-#business_info div{
-	float: left;
+#bussiness_info .pure-u-1-3{
+	padding: 0 1%;
+	width: 48%;
 }
 #footer{
 	background: #666;
@@ -31,9 +31,6 @@ body {
 	letter-spacing: 0;
 	float: right;
 	padding:5px;
-}
-#logo{
-	width: 98%;
 }
 #nav ul{
 	list-style: none;
@@ -53,7 +50,6 @@ body {
 	background-size: cover;
 	display: table;
 	height:450px;
-	margin-bottom: 15px;
 	width:100%;
 }
 #slideshow #slogan{
@@ -63,12 +59,10 @@ body {
 	text-align: center;
 	text-shadow: 2px 1px #000;
 	vertical-align: bottom;
+	padding: 7px;
 }
 #testimonials{
 	padding: 10px;
-}
-#info_row div{
-	float: left;
 }
 #image_container{
 	display: table-row;
@@ -108,6 +102,11 @@ body {
 	padding: 20px 0;
 	text-align: center;
 }
+
+.left{
+	float: left;
+}
+
 /**** MEDIA QUERIES ****/ 
 
 @media (max-width: 797px){

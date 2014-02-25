@@ -1,5 +1,5 @@
 - unless photos.empty?
-	div id="images"
+	div id="images" style="margin: auto;"
 		- for photo in photos do
 			img src="#{photo}" class="item" width="300"
 
@@ -7,6 +7,7 @@ javascript:
 	$(window).load(function(){
 		$('#images').masonry({
 			itemSelector: '.item',
-			columnWidth: 152
+			columnWidth: 155,
+			isFitWidth: true
 		});
 	}); 
