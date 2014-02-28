@@ -35,6 +35,9 @@ html
 			div class="pure-u-1"
 				== yield
 
-			div id="footer"
-				span
-					| &copy; #{Time.now.year}	
+			footer
+				div id="copyright"
+					| ClassySassyStyles &copy;#{Time.now.year}
+
+				div class="right" id="social"
+					| Social
