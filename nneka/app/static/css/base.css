@@ -36,7 +36,7 @@ nav ul{
 }
 
 #slideshow{
-	background: url('/images/staff.png') center center;
+	background: url('/images/staff.png') top center;
 	background-size: cover;
 	height: 200px;
 }
