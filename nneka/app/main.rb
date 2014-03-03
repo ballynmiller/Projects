@@ -17,6 +17,7 @@ class Portfolio < Sinatra::Base
 	end
 
 	get '/about' do
+		slim :about
 	end 
 
 	get '/portfolio/:album_name' do |a|

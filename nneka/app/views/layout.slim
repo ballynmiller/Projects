@@ -27,7 +27,7 @@ html
 
 					ul class="collapsed"
 						li: a href="/" Home
-						li: a href="/" About
+						li: a href="/about" About
 						li: a href="/" Portfolio
 						li: a href="/" Rates
 						li: a href="/" Contact
@@ -35,9 +35,6 @@ html
 			div class="pure-u-1"
 				== yield
 
-			footer
-				div id="copyright"
-					| ClassySassyStyles &copy;#{Time.now.year}
-
-				div class="right" id="social"
-					| Social
+		footer
+			div id="copyright"
+				| ClassySassyStyles &copy;#{Time.now.year}

@@ -3,6 +3,28 @@
 	margin: 0;
 }
 
+html, body{
+	height: 100%;
+}
+
+.pure-g-r{
+	display: block;
+	min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -30px;
+}
+
+.pure-g-r:after{
+	content: "";
+	display: block;
+}
+
+footer, 
+.pure-g-r:after{
+	height: 30px;
+}
+
 .left{
 	float: left;
 }
@@ -14,22 +36,19 @@
 
 footer{
 	background: #6d0019;
-	display: block;
+/*	display: block;
 	height: 30px;
-	width: 100%;
+	width: 100%;*/
 }
 
-footer div{
-	display: inline-block;
+#copyright{
+	color: #fafafa;
+	padding: 6px;
+	text-align: center;
 }
 
 footer *{
 	letter-spacing: 0;
-}
-
-#copyright,
-#social{
-	margin-top: 5px;
 }
 
 nav{
@@ -47,6 +66,27 @@ nav ul{
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+#about_container{
+}
+
+#about_container p{
+	padding: 0 10px;
+}
+
+#portfolio_img{
+	background: url('/images/me.jpg') top center;
+	display: table;
+	width: 100%;
+}
+
+#portfolio_img .title{
+	display: table-cell;
+	font-weight: bolder;
+	height: 360px;
+	text-align: center;
+	vertical-align: bottom;
 }
 
 #site_name{
@@ -75,7 +115,7 @@ nav ul{
 	color: #a90329;
 	font-size: 20px;
 	text-align: center;
-	padding-bottom: 5px;
+	padding: 10px 5px;
 }
 
 .right{
@@ -85,6 +125,7 @@ nav ul{
 @media screen and (max-width: 40.5em){
 	#btn-collapse{
 		margin: 7px 5px 0 0;
+		opacity: 0.4;
 	}
 
 	.collapsed{
@@ -124,6 +165,10 @@ nav ul{
 
 	nav ul li a:hover{
 		background: #a90329;
+	}
+
+	#portfolio_img{
+		height: 400px;
 	}
 
 	#store_info{
