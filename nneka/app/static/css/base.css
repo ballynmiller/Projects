@@ -12,7 +12,7 @@ html, body{
 	min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin-bottom: -30px;
+    margin-bottom: -29px;
 }
 
 .pure-g-r:after{
@@ -22,7 +22,7 @@ html, body{
 
 footer, 
 .pure-g-r:after{
-	height: 29px;
+	height: 30px;
 }
 
 .left{
