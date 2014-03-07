@@ -2,38 +2,30 @@ doctype 5
 html
 	head
 		title Classy Sassy Styles
-		link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css" media="screen, handheld"
-		link rel="stylesheet" href="/css/base.css" media="screen, handheld"
-		link rel="stylesheet" href="/css/glyphs.css" media="screen, handheld"
-		meta name="viewport" content="width=device-width, initial-scale=1"
+		link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css"
+		link rel="stylesheet" href="/css/base.css"
 		script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
 		script src="/js/masonry.pkgd.min.js"
 
-		javascript:
-			$(function(){
-				$("#btn-collapse").on("click", function(){
-					$('.collapsed').slideToggle("slow");
-				});
-			});
-
 	body
 		div class="pure-g-r"
-			div class="pure-u-1"
-				nav
-					div id="nav_bar"
-						div class="left" id="site_name" ClassySassyStyles 
-						div id="btn-collapse" class='right'
-							i class="icon-large icon-align-justify"
+			div id="content_wrapper"
+				div class="pure-u-1"
+					nav
+						div id="nav_bar"
+							div class="left" id="site_name" ClassySassyStyles 
+							div id="btn-collapse" class='right'
+								i class="icon-large icon-align-justify"
 
-					ul class="collapsed"
-						li: a href="/" Home
-						li: a href="/about" About
-						li: a href="/" Portfolio
-						li: a href="/" Rates
-						li: a href="/" Contact
+						ul class="right"
+							li class='selected': a href="/" Home
+							li: a href="/about" About
+							li: a href="/" Portfolio
+							li: a href="/" Rates
+							li: a href="/" Contact
 
-			div class="pure-u-1"
-				== yield
+				div class="pure-u-1"
+					== yield
 
 		footer
 			div id="copyright"
