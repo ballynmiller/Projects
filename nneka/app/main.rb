@@ -6,6 +6,8 @@ require_relative 'helpers/help'
 
 class Portfolio < Sinatra::Base
 
+	include Sinatra::Help
+
 	# update public folder 
 	set :public_folder, File.dirname(__FILE__) + '/static'
 

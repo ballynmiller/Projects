@@ -18,10 +18,16 @@ html
 								i class="icon-large icon-align-justify"
 
 						ul class="right"
-							li class='selected': a href="/" Home
-							li: a href="/about" About
-							li: a href="/" Portfolio
-							li: a href="/" Rates
+							li: a href="/" Home
+							li: a href="/" About
+							li
+								a href="/" Portfolio
+								- unless get_album_titles.empty?
+									ul
+										- for album in get_album_titles do
+											li: a href="" #{album.gsub("_", " ")}
+
+							li: a href="/#specials" Specials
 							li: a href="/" Contact
 
 				div class="pure-u-1"
@@ -29,4 +35,4 @@ html
 
 		footer
 			div id="copyright"
-				| ClassySassyStyles &copy;#{Time.now.year}
+				/| ClassySassyStyles &copy;#{Time.now.year}
