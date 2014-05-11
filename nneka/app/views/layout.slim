@@ -1,0 +1,38 @@
+doctype 5
+html
+	head
+		title Classy Sassy Styles
+		link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css"
+		link rel="stylesheet" href="/css/base.css"
+		script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+		script src="/js/masonry.pkgd.min.js"
+
+	body
+		div class="pure-g-r"
+			div id="content_wrapper"
+				div class="pure-u-1"
+					nav
+						div id="nav_bar"
+							div class="left" id="site_name" ClassySassyStyles 
+							div id="btn-collapse" class='right'
+								i class="icon-large icon-align-justify"
+
+						ul class="right"
+							li: a href="/" Home
+							li: a href="/" About
+							li
+								a href="/" Portfolio
+								- unless get_album_titles.empty?
+									ul
+										- for album in get_album_titles do
+											li: a href="" #{album.gsub("_", " ")}
+
+							li: a href="/#specials" Specials
+							li: a href="/" Contact
+
+				div class="pure-u-1"
+					== yield
+
+		footer
+			div id="copyright"
+				/| ClassySassyStyles &copy;#{Time.now.year}
