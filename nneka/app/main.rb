@@ -11,7 +11,7 @@ class Portfolio < Sinatra::Base
 	# update public folder 
 	set :public_folder, File.dirname(__FILE__) + '/static'
 
-	#config slim
+	# config slim
 	Slim::Engine.default_options[:pretty] = true
 
 	get '/' do
@@ -23,9 +23,10 @@ class Portfolio < Sinatra::Base
 	end 
 
 	get '/portfolio/:album_name' do |a|
-		if Dir.exists?(File.dirname(__FILE__) + "/static/images/#{a}")
+		dirname = File.dirname(__FILE__) + "/static/images/#{a}"
+		if Dir.exists?(dirname)
 			photos = []
-			for photo in Dir.glob(File.dirname(__FILE__) + "/static/images/#{a}/*.*") do
+			for photo in Dir.glob(dirname + "/*.*") do
 				photos.push(photo[/\/images\/.*/])
 			end
 			slim :_photos, :locals => {:photos => photos}
