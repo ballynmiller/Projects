@@ -9,30 +9,33 @@ html
 
 	body
 		div class="pure-g-r"
-			div id="content_wrapper"
-				div class="pure-u-1"
-					nav
-						div id="nav_bar"
-							div class="left" id="site_name" ClassySassyStyles 
-							div id="btn-collapse" class='right'
-								i class="icon-large icon-align-justify"
+			nav
+				div class="left" id="site_name" ClassySassyStyles
+				div class="right" id="menu"
+					== partial "navigation"
 
-						ul class="right"
-							li: a href="/" Home
-							li: a href="/" About
-							li
-								a href="/" Portfolio
-								- unless get_album_titles.empty?
-									ul
-										- for album in get_album_titles do
-											li: a href="" #{album.gsub("_", " ")}
 
-							li: a href="/#specials" Specials
-							li: a href="/" Contact
-
-				div class="pure-u-1"
-					== yield
+			div class="pure-u-1"
+				== yield
 
 		footer
-			div id="copyright"
-				/| ClassySassyStyles &copy;#{Time.now.year}
+			div id="site_navigation" class="left"
+				| Site Navigation
+				== partial "navigation"
+
+			div class="right" id="social"
+				div Twitter
+				div Facebook
+				div Youtube
+				div Instagram
+
+javascript:
+	$(function(){
+		$(window).on("scroll", function(){
+			if($(this).scrollTop() >= 30){
+				$('nav').attr("id", "sticky");
+			} else {
+				$('nav').attr("id", "");
+			}
+		});
+	});
