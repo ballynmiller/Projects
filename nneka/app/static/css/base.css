@@ -12,6 +12,22 @@
 	float: right;
 }
 
+footer{
+	background: #999;
+}
+
+footer:after{
+	clear: both;
+	content: ".";
+	display: block;
+	visibility: hidden;
+}
+
+img{
+	height: 100% !important;
+	width: auto;
+}
+
 nav{
 	font-family: "Blessed Day";
 	font-size: 30pt;
@@ -43,6 +59,21 @@ nav > ul > li > a{
 	padding: 10px 0;
 }
 
+#about_container{
+	background: rgba(204, 204, 204, 0.1);
+	height: 400px;
+	padding: 10px;
+}
+
+#about_container:after{
+	display: block;
+	clear: both;
+}
+
+#about_content{
+	margin-top: 50px;
+}
+
 #content{
 	background: url("/img/bg.png");
 	padding: 30px 0;
@@ -55,6 +86,15 @@ nav > ul > li > a{
 	margin: 0 2%;
 }
 
+#menu{
+	margin-top: 12px;
+}
+
+#portfolio_img{
+	height: 400px;
+	text-align: center;
+}
+
 #site_name{
 	color: #fff;
 	margin-left: 40px;
@@ -65,6 +105,10 @@ nav > ul > li > a{
 	background: url("/images/staff.png") center center;
 	background-size: cover;
 	height: 600px;
+}
+
+#social div{
+	display: inline-block;
 }
 
 #sticky{
