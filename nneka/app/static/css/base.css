@@ -4,6 +4,10 @@
 	padding: 0;
 }
 
+body{
+	min-width: 1200px;
+}
+
 .left{
 	float: left;
 }
@@ -91,8 +95,14 @@ nav > ul > li > a{
 }
 
 #portfolio_img{
-	height: 400px;
+	height: 300px;
+	margin-top: 30px;
 	text-align: center;
+}
+
+#portfolio_img img{
+	border:20px solid #fff;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 #site_name{
