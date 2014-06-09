@@ -1,9 +1,12 @@
 div id="slideshow"
 
 div id="content"
-	div class="pure-u-1-4" Location
-	div class="pure-u-1-4" id="" Rates
-	div class="pure-u-1-4" id="specials" Specials
+	div class="pure-u-1-4" id="location"
+		== partial "location"
+	div class="pure-u-1-4" id="informatiion"
+		== partial "information"
+	div class="pure-u-1-4" id="specials"
+		== partial "specials"
 
 div id="about"
 	== slim :about
