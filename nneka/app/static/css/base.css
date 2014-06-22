@@ -16,6 +16,14 @@ body{
 	float: right;
 }
 
+.title{
+	color: #666;
+	display: block;
+	font-family: "proxima-nova";
+	font-size: 18pt;
+	margin: 10px 0;
+}
+
 footer{
 	background: #999;
 }
@@ -25,11 +33,6 @@ footer:after{
 	content: ".";
 	display: block;
 	visibility: hidden;
-}
-
-img{
-	height: 100% !important;
-	width: auto;
 }
 
 nav{
@@ -86,7 +89,6 @@ nav > ul > li > a{
 
 #content div{
 	background: #fff;
-	height: 400px;
 	margin: 0 2%;
 }
 
@@ -103,6 +105,7 @@ nav > ul > li > a{
 #portfolio_img img{
 	border:20px solid #fff;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	height: 100%;
 }
 
 #site_name{
@@ -112,9 +115,13 @@ nav > ul > li > a{
 }
 
 #slideshow{
-	background: url("/images/staff.png") center center;
-	background-size: cover;
 	height: 600px;
+	overflow: hidden;
+}
+
+#slideshow img{
+	/*height: 100%;*/
+	width: 100%;
 }
 
 #social div{
