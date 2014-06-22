@@ -1,0 +1,123 @@
+{% extends "base.html" %} 
+{% load custom %}
+
+{% block extra_head %}{{block.super}}
+	<meta property="og:title" content="{{item.name}}" />
+	<meta property="og:type" content="product" />
+	<meta property="og:url" content="{{request.get_full_path}}" />
+	<meta property="og:image" content="{{item.image.url}}" />
+	<meta property="og:site_name" content="Jakore Co" />
+	<meta property="fb:admins" content="1117680712" />
+{% endblock %}
+
+{% block extra-head %}
+    <style>
+        #slideshow-container{
+            display:none;
+        }
+    </style>
+{% endblock %}
+
+{% block nav-ul %}
+	<ul>
+		<li><a href="/">Home</a><!-- this style seems so wrong lol -->
+			{% get_sections %}
+			{% for s in section_list %}
+				<li{% if s == item.section.all.0 %} id="selected" {% endif %}><a href="/section/{{ s.url }}/">{{ s }}</a>
+			{% endfor %}
+		<li><a href="/story/">Our Story</a>
+	</ul>
+{% endblock %}
+
+
+{% block content %}
+<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) {return;}
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	{% get_price item %}
+	<div style="margin-top:10px;">
+		<div id="left-col">
+			<div id="image_container">
+				<img id="big_image" src="{{item.get_first_image.image.url}}" alt="{{item.name}}"/>
+			</div>
+			<script type="text/javascript">
+				function swap(src){
+					document.getElementById("big_image").src=src;
+				}
+			</script>
+			<div id="thumbnails">
+				{% for i in item.get_media %}
+					<div class="thumb">
+						<img src="{{i.image.url}}" alt="{{i.name}}" onclick="swap('{{i.image.url}}')"/>
+					</div>
+				{% endfor %}
+			</div>
+            <div class="clear">&nbsp;</div>
+		</div>
+        <div id="right-col">
+			<h2>{{item.name}}</h2>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<table>
+				<tr>
+					<td colspan="2" style="height:50px;">
+						<fb:like href="{{request.get_full_path}}" send="true" width="350" height="50px" show_faces="true"></fb:like>
+					</td>
+				</tr>
+				<tr>
+					<td>Description:</td>
+					<td>{{item.desc}}</td>
+				</tr>
+				{% if item.oos %}
+					<tr>
+						<td>
+							<span style="font-weight:bold;color:red;">
+								Sold Out
+							</span>
+						</td>
+					</tr>
+					</table>
+				{% else %}
+				<tr>
+					<td>Price:</td>
+					<td>{{price}}</td>
+				</tr>
+				<tr>
+					<td>Quanity:</td>
+					<td><input type="text" name="quantity" value="1" size="3"/></td>
+				</tr>
+				<tr>
+					<td>Available Sizes:</td>
+					<td>
+						<select name="item_name">
+							{% for s in item.sizes.all %}
+								<option value="{{item.name}}-Size:{{s}}">{{s}}</option>
+							{% endfor %}
+						</select>
+					</td>
+				</tr>
+			</table>
+					<input type="hidden" name="cmd" value="_cart"/>
+					<input type="hidden" name="amount" value="{{price}}"/>
+					<input type="hidden" name="add" value="1"/>
+					<input type="hidden" name="business" value="jakore.llc.22@gmail.com"/>
+				{% if not user.is_anonymous %}
+					{% get_contact user %}{% if contact %}
+						<input type="hidden" name="address1" value="{{contact.street}}"/>
+						<input type="hidden" name="state" value="{{contact.state}}"/>
+						<input type="hidden" name="zip" value="{{contact.zip}}"/>
+						<input type="hidden" name="city" value="{{contact.city}}"/>
+						<input type="hidden" name="first_name" value="{{user.first_name}}"/>
+						<input type="hidden" name="last_name" value="{{user.last_name}}"/>
+					{% endif %}{% endif %}
+						<input type="submit" id="butt" value="add to cart"/>
+			</form>
+			{% endif %}
+		</div>
+		<br style="clear:both;"/>
+	</div>
+{% endblock %}

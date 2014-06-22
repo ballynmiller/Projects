@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block style %}
+	#content{
+		color:#FFF;
+		padding:25px;
+	}
+{% endblock %}
+
+{% block content %}
+	<form action="/contact/" method="post">{% csrf_token %}
+		<table>
+			{{form}}
+		</table>
+		<input type="submit" value="Submit"/>
+	</form>
+{% endblock %}

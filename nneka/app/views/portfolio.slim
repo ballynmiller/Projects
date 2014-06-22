@@ -1,0 +1,11 @@
+== partial "portfolio_css"
+
+div id="portfolio_content"
+	- unless get_album_titles.empty?
+		- for album in get_album_titles do
+			div class="album_cover"
+				- photo = get_first_img "#{album}"
+				- if photo
+					img src="/images/#{photo}"
+					div class="album_overlay" 
+						a href="/portfolio/#{album}" #{album.gsub("_", " ")}

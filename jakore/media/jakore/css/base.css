@@ -1,0 +1,254 @@
+/* Base Styles for Jakore Clothing Inc. */ 
+@font-face {
+    font-family: 'lintelregular';
+    src: url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.eot');
+    src: url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.woff') format('woff'),
+         url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.ttf') format('truetype'),
+         url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.svg#lintelregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+	font-family: 'Open Sans', sans-serif;
+	margin:0;
+	padding:0;
+}
+table{
+	table-layout:fixed; 
+	word-wrap:break-word;
+	width:100%;
+}
+html, body{
+	background: url(http://www.jakore.com/jakore/images/shattered.jpg);
+	width:100%;
+}
+#copyright-info{
+    float:right;
+}
+img{
+    border:none;
+	width:100%;
+}
+
+#wrapper{
+	width:80%;
+	max-width: 1024px;
+	margin:auto;
+	padding:10px 0;
+}
+footer,
+nav{
+	background: #cd6017;
+}
+footer{
+    height:35px;
+}
+nav ul li{
+	display:inline-block;
+	padding:15px 7px;
+}
+nav ul li a{
+	color:#FFF;
+	font-family: 'Lobster Two', cursive;
+	font-size: 1.3em;
+	text-decoration: none;
+}
+nav ul li:hover, 
+#selected{
+	background: #a64d11;
+}
+#recent-container{
+	background: #fff;
+	padding:5px 0;
+}
+#slideshow-container{
+	border-bottom:4px solid #cd6017;
+	position:relative;
+}
+#slideshow-container img{
+	display:none;
+	position:absolute;
+	top:0px;
+}
+#slideshow-navigation{
+	color:rgba(255,255,255,0.7);
+	display:none;
+	font-size: 18.75em;
+	position: relative;
+	top:40px;
+	z-index: 1;
+}
+#prev-icon, 
+#next-icon{
+	cursor:pointer;
+    font-family: 'lintelregular';
+}
+#prev-icon{
+	float:left;
+}
+#next-icon{
+	float:right;
+}#logo{
+	width:13.28125%;
+}
+.clear{
+	clear:both;
+}
+.product{
+    float:left;
+    width:24%;
+    margin:5px .5% 10px;
+    min-height:150px;
+    position:relative;
+    text-align: center;
+}
+.product a{
+    color:#000;
+    text-decoration: none;
+}
+.product img{
+	height:93.75%;
+}
+.product-icon{
+	color:#fff;
+	height:90px;
+	width:90px;
+	position: absolute;
+	bottom:25px;
+	line-height: 90px;
+}
+.product-title{
+	position: relative;
+	top:-3px;
+}
+.price{
+	background: url(http://www.jakore.com/jakore/images/priceBg.png) no-repeat;
+}
+.social{
+	color:#924613;
+	font-size:1.5em;
+	margin-right:3px;
+}
+#social-container a{
+	border:none;
+	text-decoration:none;
+}
+.social:hover{
+	color:#69330f;
+}
+.soldout{
+    background: url(http://www.jakore.com/jakore/images/soldoutBg.png) no-repeat;
+}
+#section-title{
+    margin-left:5px;
+}
+#social-container{
+    float:left;
+    margin-left:5px;
+	margin-top:8px;
+}
+#social-container ul{
+    list-style: none;
+}
+#social-container ul li{
+    display:inline-block;
+    margin-right:10px;
+}
+#social-container ul li a{
+    display: block;
+    height:35px;
+    width:35px;
+}
+#facebook{
+    background:url(http://www.jakore.com/jakore/images/socialLinks.png) no-repeat 0 -35px;
+}
+#facebook:hover{
+    background-position:0 -105px;
+}
+#twitter{
+    background:url(http://www.jakore.com/jakore/images/socialLinks.png) no-repeat 0 0;
+}
+#twitter:hover{
+    background-position:0 -70px;
+}
+footer{
+    padding:10px;
+}
+#copyright-info{
+    color:#fff;
+    margin-top: 8px;
+}
+#left-col{
+    float:left;
+    margin:0 2.5%;
+    width:45%;
+}
+#right-col{
+    float:right;
+    margin:0 2.5%;
+    width:45%;
+}
+#thumbnails{
+    margin-top: 10px;
+}
+.thumb{
+    float:left;
+    width:24%;
+    margin:0 0.5%;
+}
+.thumb img{
+    height:100%;
+    width:100%;
+}
+@media only screen and (min-width: 100px) and (max-width:700px){
+	.product{
+        width:80%;
+        margin:auto 10%;
+	}
+	#logo{
+		width:35%;
+	}
+	nav ul li{
+		display:block;
+        padding:0;
+	}
+    nav ul li a{
+        display:block;
+        width:100%;
+        padding:15px 7px;
+    }
+    #left-col,
+    #right-col{
+        float:none;
+        width:95%;
+    }
+}
+@media only screen and (min-width: 700px) and (max-width:799px){
+	.product{
+        width:48%;
+		margin:auto 1%;
+	}
+	.product-row{
+		text-align: center;
+	}
+    #slideshow-navigation{
+		font-size: 12em;
+		top:0;
+	}
+
+}
+@media only screen and (min-width: 800px) and (max-width:1149px){
+	.product{
+        margin:auto .65%;
+		width:32%;
+	}
+}
+
+@media only screen and (min-width:1150px){
+    .product{
+        margin:auto .5%;
+        width:24%;
+    }
+}

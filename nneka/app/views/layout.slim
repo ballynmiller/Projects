@@ -3,9 +3,12 @@ html
 	head
 		title Classy Sassy Styles
 		link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css"
+		link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600' rel='stylesheet' type='text/css'
 		link rel="stylesheet" href="/css/base.css"
 		script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
-		script src="/js/masonry.pkgd.min.js"
+		script src="/js/jquery.slides.min.js"
+		script src="/js/jquery.imagesloaded.js"
+		script src="/js/jquery.wookmark.min.js"
 
 	body
 		div class="pure-g-r"
@@ -19,23 +22,8 @@ html
 				== yield
 
 		footer
-			div id="site_navigation" class="left"
-				| Site Navigation
-				== partial "navigation"
-
 			div class="right" id="social"
 				div Twitter
 				div Facebook
 				div Youtube
 				div Instagram
-
-javascript:
-	$(function(){
-		$(window).on("scroll", function(){
-			if($(this).scrollTop() >= 30){
-				$('nav').attr("id", "sticky");
-			} else {
-				$('nav').attr("id", "");
-			}
-		});
-	});

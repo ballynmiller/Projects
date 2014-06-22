@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+{% block style %}
+	#content{
+		color:#FFF;
+		padding:25px;
+	}
+	.helptext{
+		font-size:12px; 
+		color:#666;
+	}
+{% endblock %}
+
+{% block content %}
+<form method="post" action="/accounts/register/">{%csrf_token%}
+	<table>
+		{{user_form.as_table}}
+	 	{{contact_form.as_table}}
+	 	<tr>
+	 		<td></td>
+	 		<td><input type="submit" value="submit"/></td>
+	 	</tr>
+	</table>
+</form>
+{% endblock %}

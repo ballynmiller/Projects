@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load custom %}
+
+{% block extra-head %}
+    <style>
+        #slideshow-container{
+            display:none;
+        }
+    </style>
+{% endblock %}
+
+{% block nav-ul %}
+    <ul>
+        <li><a href="/">Home</a><!-- this style seems so wrong lol -->
+        {% get_sections %}
+        {% for s in section_list %}
+            <li{% if section == s %} id="selected" {% endif %}><a href="/section/{{ s.url }}/">{{ s }}</a>
+        {% endfor %}
+        <li><a href="/story/">Our Story</a>
+    </ul>
+{% endblock %}
+
+{% block content %}
+<div id="recent-container">
+    <div id="section-title">{{ section.name }}</div>
+    <div class="product-row">
+        {%  for i in item_list %}
+            <div class="product">
+                <a href="/detail/{{ i.id }}/">
+                    <img src="{{ MEDIA_URL }}{{ i.get_first_image.image }}" alt="not found" width="315" height="300" />
+                    <div class="product-icon{% if not i.oos %} price {% else %} soldout {% endif %}">
+                        {% if i.oos %}
+                            Soldout
+                        {% else %}
+                            {{ i.price }}
+                        {% endif %}
+                    </div>
+                    <div class="product-title">{{ i.name }}</div>
+                </a>
+            </div>
+        {% endfor %}
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %} 
