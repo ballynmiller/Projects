@@ -1,4 +1,5 @@
 *{
+	font-family: "Josefin Sans";
 	letter-spacing: 0;
 	margin: 0;
 	padding: 0;
@@ -6,6 +7,41 @@
 
 body{
 	min-width: 1200px;
+}
+
+.album_cover{
+	display: inline-block;
+	margin: 10px;
+	height: 300px;
+	width: 300px;
+}
+
+.album_cover img{
+	height: 100%;
+	width: 100%;
+}
+
+.album_overlay{
+	background: rgba(0, 0, 0, 0.8);
+	display: table;
+	height: 100%;
+	position: relative;
+	top: -304px;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.album_overlay:hover{
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.album_overlay a{
+	color: #fff;
+	display: table-cell;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: capitalize;
+	vertical-align: middle;
 }
 
 .left{
@@ -19,13 +55,12 @@ body{
 .title{
 	color: #666;
 	display: block;
-	font-family: "proxima-nova";
 	font-size: 18pt;
 	margin: 10px 0;
 }
 
 footer{
-	background: #999;
+	background: #3C3C3C;
 }
 
 footer:after{
@@ -36,11 +71,10 @@ footer:after{
 }
 
 nav{
-	font-family: "Blessed Day";
-	font-size: 30pt;
 	text-shadow: 1px 1px 1px #000;
 	position: absolute;
 	width: 100%;
+	z-index: 9999;
 }
 
 nav a{
@@ -48,9 +82,13 @@ nav a{
 	text-decoration: none;
 }
 
+nav a:hover{
+	color: #C0C0C0;
+}
+
 nav ul{
-	font-family: sans-serif;
-	font-size: 16pt;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 22pt;
 	list-style: none;
 	margin: 0;
 	margin-top: 3px;
@@ -96,6 +134,12 @@ nav > ul > li > a{
 	margin-top: 12px;
 }
 
+#portfolio_content{
+	margin: 60px auto;
+	/*width: 90%;*/
+	text-align: center;
+}
+
 #portfolio_img{
 	height: 300px;
 	margin-top: 30px;
@@ -110,6 +154,8 @@ nav > ul > li > a{
 
 #site_name{
 	color: #fff;
+	font-family: "Blessed Day";
+	font-size: 30pt;
 	margin-left: 40px;
 	margin-top: 10px;
 }
@@ -120,7 +166,6 @@ nav > ul > li > a{
 }
 
 #slideshow img{
-	/*height: 100%;*/
 	width: 100%;
 }
 

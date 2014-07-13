@@ -10,6 +10,14 @@ module Sinatra
 			return Dir.entries(File.dirname(__FILE__) + '/../static/images') \
 				.delete_if {|dir| dir.include? '.'}
 		end
+
+		def get_first_img(album_name)
+			photos = Dir.entries(File.dirname(__FILE__) + "/../static/images/" + album_name) \
+				.delete_if {|f| File.directory? f or f.include? "DS_Store"}
+			unless photos.empty?
+				return album_name + "/" + photos[0]
+			end
+		end
 	end
 	helpers Help
 end

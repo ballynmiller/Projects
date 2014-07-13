@@ -1,5 +1,10 @@
 div id="slideshow"
-	img src="/images/staff_cropped.png"
+	img src="/img/image1.png"
+	img src="/img/image2.png"
+	img src="/img/image3.png"
+	img src="/img/image4.png"
+	img src="/img/image5.png"
+	img src="/img/image6.png"
 
 div id="content"
 	div class="pure-u-1-4" id="location"
@@ -11,3 +16,25 @@ div id="content"
 
 div id="about"
 	== slim :about
+
+javascript:
+	$(function(){
+		$("#slideshow").slidesjs({
+			height: 600,
+			play: {
+				auto: true,
+				effect: "fade",
+				interval: 6000
+			}
+		});
+
+		$(window).on("scroll", function(){
+			if($(this).scrollTop() >= 30){
+				$('nav').attr("id", "sticky");
+			} else {
+				$('nav').attr("id", "");
+			}
+		});
+
+	});
+
