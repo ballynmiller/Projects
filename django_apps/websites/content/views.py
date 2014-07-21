@@ -1,6 +1,6 @@
-from content.models import *
-from content.forms import ContactForm, SubscribeForm, UserContactForm, UserForm
-from shopping.models import Item
+from websites.content.models import *
+from websites.content.forms import ContactForm, SubscribeForm, UserContactForm, UserForm
+from websites.shopping.models import Item
 
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response

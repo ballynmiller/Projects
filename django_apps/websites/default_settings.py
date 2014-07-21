@@ -25,19 +25,6 @@ class DJANGO_SETTINGS:
             "django.core.context_processors.static",
             "django.contrib.messages.context_processors.messages"
         ),
-        "INSTALLED_APPS":(
-            'django.contrib.auth',
-            'django.contrib.contenttypes',
-            'django.contrib.flatpages',
-            'django.contrib.sessions',
-            'django.contrib.sites',
-            'django.contrib.messages',
-            'django.contrib.staticfiles',
-            'django.contrib.admin',
-            'websites.ads',
-            'websites.content',
-            'websites.contact',
-        ),
         "LOGGING" : {
             'version': 1,
             'disable_existing_loggers': False,
@@ -76,6 +63,7 @@ class DJANGO_SETTINGS:
             'websites.content',
             'websites.contact',
             'websites.shopping',
+            'gunicorn'
         ),
         "ROOT_URLCONF":'urls',
         "TEMPLATE_LOADERS":(

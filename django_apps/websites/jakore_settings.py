@@ -6,18 +6,17 @@ TEMPLATE_DEBUG = DEBUG
 MANAGERS = ADMINS
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'jakore',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jakore', 
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 TEMPLATE_DIRS = (
-        "../websites/templates/personal/jakore",
-        "../websites/templates",
-        "../websites"
+        "websites/templates/personal/jakore",
+        "websites/templates",
 )
 SHOPPING=True
 SUBSCRIBER_FORM=True
@@ -31,3 +30,4 @@ AUTH_SECRET='ptDC7xf75R4IBTx1fcbbWGuY3vqAnr3G2ggbfFfYPE'
 BANNER_DIMENSIONS='540x351'
 MEDIA_URL="http://www.jakore.com/"
 STATIC_URL="http://www.jakore.com/static/"
+ROOT_URLCONF='websites.urls'

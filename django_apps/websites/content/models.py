@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-import Image
+from PIL import Image
 
 class Section(models.Model):
     name=models.CharField(max_length=20,help_text='Enter the name of the section')

@@ -3,10 +3,10 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.conf import settings
 from django.template import Variable
 
-from content.models import Section,Banner
-from contact.models import Contact
-from shopping.models import Item, Group
-from ads.models import Ad
+from websites.content.models import Section,Banner
+from websites.contact.models import Contact
+from websites.shopping.models import Item, Group
+from websites.ads.models import Ad
 
 register = template.Library()
 

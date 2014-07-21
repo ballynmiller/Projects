@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-import Image
+from PIL import Image
 
 LOCATION_CHOICES=(
    ('top right', 'top right'), 

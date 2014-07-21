@@ -1,10 +1,10 @@
 from django.db import models
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
-from content.models import Section
-from contact.models import Contact
+from websites.content.models import Section
+from websites.contact.models import Contact
 
-import Image
+from PIL import Image
 
 class Size(models.Model):
     name=models.CharField(max_length=10,help_text='Example xxl... or small...')
