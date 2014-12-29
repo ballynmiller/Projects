@@ -1,8 +1,12 @@
+upstream jakore{
+	server unix:///tmp/run/jakore.socket;
+}
 server{
 	listen 80;
-	server_name jakore.ballynmiller.com;
+	server_name classy.ballynmiller.com;
 
 	location / {
-		uwsgi_pass 127.0.0.1:3021;
+		uwsgi_pass jakore;
+		include /etc/nginx/uwsgi_params;
 	}
 }
