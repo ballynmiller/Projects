@@ -4,19 +4,19 @@
 	<head>
 		<title>Jakore</title>
         <meta name="viewport" content="width=device-width" />
-		<link rel="stylesheet" href="{{ MEDIA_URL }}jakore/css/font-awesome.css">
+		<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.12.0/build/cssnormalize-context/cssnormalize-context-min.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans|Lobster+Two' rel='stylesheet' type='text/css'>
-		<link href="{{ MEDIA_URL }}jakore/css/base.css" rel="stylesheet" />
+		<link href="/assets/css/base.min.css" rel="stylesheet" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="{{ MEDIA_URL }}jakore/js/html5shiv.js"></script>
-        <script src="{{ MEDIA_URL }}jakore/js/main.js"></script>
+        <script src="/assets/js/html5shiv.js"></script>
+        <script src="/assets/js/main.min.js"></script>
         {% block extra-head %}{% endblock %}
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="logo">
-				<a id="home" href="#"><img src="{{ MEDIA_URL }}jakore/images/jkLogo.png" /></a>
+				<a id="home" href="#"><img src="/assets/images/jkLogo.png" /></a>
 			</div>
 			<nav>
                 {% block nav-ul %}
@@ -31,13 +31,13 @@
                 {% endblock %}
 			</nav>
 			<div id="slideshow-container">
-				<img src="{{ MEDIA_URL }}jakore/images/image1.jpg" alt="not found" />
-                <img src="{{ MEDIA_URL }}jakore/images/image2.jpg" alt="not found" />
-                <img src="{{ MEDIA_URL }}jakore/images/image3.jpg" alt="not found" />
-				<img src="{{ MEDIA_URL }}jakore/images/image4.jpg" alt="not found" />
-				<img src="{{ MEDIA_URL }}jakore/images/image5.jpg" alt="not found" />
-				<img src="{{ MEDIA_URL }}jakore/images/image6.jpg" alt="not found" />
-				<img src="{{ MEDIA_URL }}jakore/images/image7.jpg" alt="not found" />
+				<img src="/assets/images/image1.jpg" alt="not found" />
+                <img src="/assets/images/image2.jpg" alt="not found" />
+                <img src="/assets/images/image3.jpg" alt="not found" />
+				<img src="/assets/images/image4.jpg" alt="not found" />
+				<img src="/assets/images/image5.jpg" alt="not found" />
+				<img src="/assets/images/image6.jpg" alt="not found" />
+				<img src="/assets/images/image7.jpg" alt="not found" />
 			</div>
 			<div id="recent-container">
 				{% block content %}{% endblock %}

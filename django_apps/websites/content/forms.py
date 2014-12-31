@@ -36,3 +36,4 @@ class UserContactForm(ModelForm):
 class SubscribeForm(ModelForm):
     class Meta:
         model=Subscriber
+        fields=["email"]

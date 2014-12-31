@@ -1,7 +1,7 @@
 from default_settings import DJANGO_SETTINGS
 globals().update(DJANGO_SETTINGS.DEFAULT)
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 MANAGERS = ADMINS
 DATABASES = {
@@ -9,7 +9,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'jakore', 
         'USER': 'root',
-        'PASSWORD': '84||yn23',
+        'PASSWORD': '{PASSWORD}',
         'HOST': '',
         'PORT': '',
     }
@@ -28,6 +28,6 @@ CONSUMER_SECRET='JEZRFmas5Z0EfQxwdVISMaPm282zxTuxfE7qDvgqPxw'
 AUTH_TOKEN='25372355-01yyYUgzpkqeDuxbz2YMEkygDaxztDMBvNmGvDXfs'
 AUTH_SECRET='ptDC7xf75R4IBTx1fcbbWGuY3vqAnr3G2ggbfFfYPE'
 BANNER_DIMENSIONS='540x351'
-MEDIA_URL="http://www.jakore.com/"
-STATIC_URL="http://www.jakore.com/static/"
+MEDIA_URL="http://jakore.ballynmiller.com/"
+STATIC_URL="http://jakore.ballynmiller.com/static/"
 ROOT_URLCONF='websites.urls'

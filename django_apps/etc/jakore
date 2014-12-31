@@ -3,7 +3,19 @@ upstream jakore{
 }
 server{
 	listen 80;
-	server_name classy.ballynmiller.com;
+	server_name jakore.ballynmiller.com;
+
+	location ~* \.(jpg|jpeg|js){
+		expires 365d;
+	}
+
+	location /uploads{
+		alias /uploads/;
+	}
+
+	location /assets{
+		alias {ASSETS_PATH};
+	}
 
 	location / {
 		uwsgi_pass jakore;

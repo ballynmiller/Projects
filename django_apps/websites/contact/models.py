@@ -5,7 +5,7 @@ from django.conf import settings
 class Contact(models.Model):
     user=models.ForeignKey(User,unique=True)
     joined=models.DateField(auto_now=True)
-    is_subscriber=models.BooleanField(verbose_name="Subscribe to email blast?")
+    is_subscriber=models.BooleanField(verbose_name="Subscribe to email blast?", default=False)
     street=models.CharField(max_length=200,blank=True,null=True)
     state=models.CharField(max_length=200,blank=True,null=True)
     zip=models.IntegerField(blank=True,null=True)

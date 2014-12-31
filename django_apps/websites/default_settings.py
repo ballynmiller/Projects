@@ -71,12 +71,15 @@ class DJANGO_SETTINGS:
           'django.template.loaders.app_directories.Loader',
         ),
         "MIDDLEWARE_CLASSES":(
+            'django.middleware.gzip.GZipMiddleware',
             'django.middleware.common.CommonMiddleware',
             'django.contrib.sessions.middleware.SessionMiddleware',
             'django.middleware.csrf.CsrfViewMiddleware',
             'django.contrib.auth.middleware.AuthenticationMiddleware',
             'django.contrib.messages.middleware.MessageMiddleware',
             'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+            'htmlmin.middleware.HtmlMinifyMiddleware',
+            'htmlmin.middleware.MarkRequestMiddleware',
         ),
         "TIME_ZONE":'America/Chicago',
         "LANGUAGE_CODE":'en-us',
@@ -93,6 +96,8 @@ class DJANGO_SETTINGS:
         ),
         "SECRET_KEY":'*y&%1zxllp%4r^*x^h6lo^vk3cr+3l%xo5e)^0^p63*b2t_2p^',
         "ADMINS":(),
+        "ALLOWED_HOSTS": ['.ballynmiller.com'],
+        "HTML_MINIFY": True
     }
     DEBUG_SETTINGS=DEFAULT.copy()
     DEBUG_SETTINGS.update({

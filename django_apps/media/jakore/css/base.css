@@ -1,11 +1,11 @@
 /* Base Styles for Jakore Clothing Inc. */ 
 @font-face {
     font-family: 'lintelregular';
-    src: url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.eot');
-    src: url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.woff') format('woff'),
-         url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.ttf') format('truetype'),
-         url('http://www.jakore.com/jakore/fonts/lintel-regular-webfont.svg#lintelregular') format('svg');
+    src: url('/assets/fonts/lintel-regular-webfont.eot');
+    src: url('/assets/fonts/lintel-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/lintel-regular-webfont.woff') format('woff'),
+         url('/assets/fonts/lintel-regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/lintel-regular-webfont.svg#lintelregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -21,7 +21,7 @@ table{
 	width:100%;
 }
 html, body{
-	background: url(http://www.jakore.com/jakore/images/shattered.jpg);
+	background: url(/assets/images/shattered.jpg);
 	width:100%;
 }
 #copyright-info{
@@ -40,7 +40,7 @@ img{
 }
 footer,
 nav{
-	background: #cd6017;
+	background: #000;
 }
 footer{
     height:35px;
@@ -50,21 +50,21 @@ nav ul li{
 	padding:15px 7px;
 }
 nav ul li a{
-	color:#FFF;
+	color:#B2B247;
 	font-family: 'Lobster Two', cursive;
 	font-size: 1.3em;
 	text-decoration: none;
 }
 nav ul li:hover, 
 #selected{
-	background: #a64d11;
+	background: #333;
 }
 #recent-container{
 	background: #fff;
 	padding:5px 0;
 }
 #slideshow-container{
-	border-bottom:4px solid #cd6017;
+	border-bottom:4px solid #000;
 	position:relative;
 }
 #slideshow-container img{
@@ -124,10 +124,10 @@ nav ul li:hover,
 	top:-3px;
 }
 .price{
-	background: url(http://www.jakore.com/jakore/images/priceBg.png) no-repeat;
+	background: url(/assets/images/priceBg.png) no-repeat;
 }
 .social{
-	color:#924613;
+	color:#B2B247;
 	font-size:1.5em;
 	margin-right:3px;
 }
@@ -136,10 +136,10 @@ nav ul li:hover,
 	text-decoration:none;
 }
 .social:hover{
-	color:#69330f;
+	color:#FFFF66;
 }
 .soldout{
-    background: url(http://www.jakore.com/jakore/images/soldoutBg.png) no-repeat;
+    background: url(/assets/images/soldoutBg.png) no-repeat;
 }
 #section-title{
     margin-left:5px;
@@ -162,13 +162,13 @@ nav ul li:hover,
     width:35px;
 }
 #facebook{
-    background:url(http://www.jakore.com/jakore/images/socialLinks.png) no-repeat 0 -35px;
+    background:url(/assets/images/socialLinks.png) no-repeat 0 -35px;
 }
 #facebook:hover{
     background-position:0 -105px;
 }
 #twitter{
-    background:url(http://www.jakore.com/jakore/images/socialLinks.png) no-repeat 0 0;
+    background:url(/assets/images/socialLinks.png) no-repeat 0 0;
 }
 #twitter:hover{
     background-position:0 -70px;

@@ -27,11 +27,11 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-    src: url('http://www.jakore.com/jakore/fonts/fontawesome-webfont.eot');
-    src: url('http://www.jakore.com/jakore/fonts/fontawesome-webfont.eot') format('embedded-opentype'),
-         url('http://www.jakore.com/jakore/fonts/fontawesome-webfont.woff') format('woff'),
-         url('http://www.jakore.com/jakore/fonts/fontawesome-webfont.ttf') format('truetype'),
-         url('http://www.jakore.com/jakore/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+    src: url('/assets/fonts/fontawesome-webfont.eot');
+    src: url('/assets/fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+         url('/assets/fonts/fontawesome-webfont.woff') format('woff'),
+         url('/assets/fonts/fontawesome-webfont.ttf') format('truetype'),
+         url('/assets/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }

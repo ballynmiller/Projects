@@ -14,7 +14,7 @@ class Section(models.Model):
 class Banner(models.Model):
     name=models.CharField(max_length=20,help_text='Helpful name to remember top banner')
     image=models.ImageField(upload_to=settings.MEDIA_ROOT + 'banner/')
-    hide=models.BooleanField(blank=True,help_text='Hides Current Banner')
+    hide=models.BooleanField(blank=True,help_text='Hides Current Banner', default=True)
     
     def __unicode__(self):
         return self.name

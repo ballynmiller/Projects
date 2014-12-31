@@ -44,3 +44,8 @@ else:
     urlpatterns += patterns('',
         url(r'^$', views.index)
     )
+
+# if settings.DEBUG:
+#     urlpatterns += patterns('',
+#         (r'^assets/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/Users/ball6862/Github/Sites/django_apps/media/jakore/", 'show_indexes':True}),
+# )
