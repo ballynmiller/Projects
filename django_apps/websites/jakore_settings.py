@@ -31,3 +31,4 @@ BANNER_DIMENSIONS='540x351'
 MEDIA_URL="http://www.jakore.com/"
 STATIC_URL="http://www.jakore.com/static/"
 ROOT_URLCONF='websites.urls'
+ALLOWED_HOSTS = ['.jakore.com']
