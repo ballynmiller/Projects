@@ -6,7 +6,7 @@ server{
 	server_name jakore.com www.jakore.com;
 
 	location /assets{
-		expires 1d;
+		expires 30d;
 		alias {ASSETS_PATH}/jakore;
 	}
 
@@ -19,7 +19,7 @@ server{
 	}
 
 	location /uploads{
-		expires 1d;
+		expires 30d;
 		alias /uploads/;
 	}
 
