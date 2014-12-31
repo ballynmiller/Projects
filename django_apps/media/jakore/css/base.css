@@ -113,19 +113,20 @@ nav ul li:hover,
 }
 .product-icon{
 	border-radius: 45px;
+	bottom:30px;
 	color:#fff;
-	height:90px;
-	width:90px;
+	height:70px;
+	left: 2px;
+	line-height: 70px;
 	position: absolute;
-	bottom:25px;
-	line-height: 90px;
+	width:70px;
 }
 .product-title{
 	position: relative;
 	top:-3px;
 }
 .price{
-	background: rgba(255, 215, 0);
+	background: rgba(255, 215, 0, 0.75);
 }
 .social{
 	color:#FFD700;
