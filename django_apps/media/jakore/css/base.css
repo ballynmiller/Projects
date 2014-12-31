@@ -112,6 +112,7 @@ nav ul li:hover,
 	height:93.75%;
 }
 .product-icon{
+	border-radius: 45px;
 	color:#fff;
 	height:90px;
 	width:90px;
@@ -124,7 +125,7 @@ nav ul li:hover,
 	top:-3px;
 }
 .price{
-	background: url(/assets/images/priceBg.png) no-repeat;
+	background: rgba(255, 215, 0);
 }
 .social{
 	color:#FFD700;
