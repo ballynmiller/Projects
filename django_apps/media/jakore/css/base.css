@@ -50,7 +50,7 @@ nav ul li{
 	padding:15px 7px;
 }
 nav ul li a{
-	color:#B2B247;
+	color:#FFD700;
 	font-family: 'Lobster Two', cursive;
 	font-size: 1.3em;
 	text-decoration: none;
@@ -127,7 +127,7 @@ nav ul li:hover,
 	background: url(/assets/images/priceBg.png) no-repeat;
 }
 .social{
-	color:#B2B247;
+	color:#FFD700;
 	font-size:1.5em;
 	margin-right:3px;
 }
