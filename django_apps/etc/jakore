@@ -3,18 +3,22 @@ upstream jakore{
 }
 server{
 	listen 80;
-	server_name jakore.ballynmiller.com;
+	server_name jakore.com www.jakore.com;
 
 	location ~* \.(jpg|jpeg|js){
 		expires 365d;
 	}
 
-	location /uploads{
-		alias /uploads/;
-	}
-
 	location /assets{
 		alias {ASSETS_PATH};
+	}
+
+	location /static{
+		alias /usr/local/lib/python2.7/dist-packages/django/contrib/admin/static;
+	}
+
+	location /uploads{
+		alias /uploads/;
 	}
 
 	location / {
