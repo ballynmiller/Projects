@@ -61,7 +61,7 @@ namespace :maintenance do
 			end
 			
 			# update settings file
-			execute "sed -i 's/{PASSWORD}/PASSWORD/g' #{current_path}/django_apps/websites/jakore_settings.py"
+			execute "sed -i 's/{PASSWORD}/CHANGE_ME/g' #{current_path}/django_apps/websites/jakore_settings.py"
 
 			#update jakore file
 			execute "sed -i 's/{ASSETS_PATH}/\\/var\\/www\\/websites\\/current\\/django_apps\\/media/g' /etc/nginx/sites-enabled/jakore"
