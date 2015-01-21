@@ -110,6 +110,7 @@ nav ul li:hover,
 }
 .product img{
 	height:93.75%;
+	min-height: 246px;
 }
 .product-icon{
 	border-radius: 45px;

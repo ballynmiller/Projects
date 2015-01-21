@@ -16,7 +16,7 @@ import cgi
 
 @csrf_protect
 def index(request):
-    items = Item.objects.all().order_by('id')[:6]
+    items = Item.objects.all().order_by('-id')[:6]
     return render_to_response("index.html", {
         'items': items
     }, RequestContext(request), )
