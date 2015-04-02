@@ -155,11 +155,12 @@ nav ul li:hover,
 }*/
 
 #recent-container{
-	margin: auto;
+	text-align: center;
 }
 
 .row{
 	display: flex;
+	justify-content: center;
 }
 
 .row div.item{
