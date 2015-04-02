@@ -153,9 +153,13 @@ nav ul li:hover,
 	position: relative;
 	top:-3px;
 }*/
+
+#recent-container{
+	margin: auto;
+}
+
 .row{
 	display: flex;
-	justify-content: space-around;
 }
 
 .row div.item{
