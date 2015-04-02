@@ -9,7 +9,7 @@ from django.conf import settings
 
 urlpatterns = patterns('',
      url(r'^admin/', include(admin.site.urls)),
-     url(r'^contact/$','websites.content.views.contact'),
+     # url(r'^contact/$','websites.content.views.contact'),
 )
 
 if settings.REGISTER: 
