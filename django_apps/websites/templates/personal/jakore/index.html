@@ -3,12 +3,14 @@
 
 <div class='row'>
 {% for item in items %}
-    <div class='item'>
-        <img src="{{item.get_first_image.image.url}}" alt="{{item.name}}" />
-        <h4>
-            <a href="/detail/{{ item.id }}" class="title">{{item.name}}</a>
-        </h4>
-        <strong class='price'>{{item.price}}</strong>
+    <div>
+        <div class='item'>
+            <img src="{{item.get_first_image.image.url}}" alt="{{item.name}}" />
+            <h4>
+                <a href="/detail/{{ item.id }}" class="title">{{item.name}}</a>
+            </h4>
+            <strong class='price'>{{item.price}}</strong>
+        </div>
     </div>
     {% if forloop.counter|divisibleby:"4" %}
         </div><div class='row'>
