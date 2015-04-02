@@ -153,15 +153,17 @@ nav ul li:hover,
 	position: relative;
 	top:-3px;
 }*/
+
 .row{
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 .row div.item{
 	background: #fff;
 	margin: 20px;
 	padding: 10px;
+	text-align: center;
 	width: 300px;
 }
 
