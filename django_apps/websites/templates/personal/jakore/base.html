@@ -7,13 +7,46 @@
 		<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.12.0/build/cssnormalize-context/cssnormalize-context-min.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans|Lobster+Two' rel='stylesheet' type='text/css'>
-		<link href="/assets/css/base.min.css" rel="stylesheet" />
+		<link href="/assets/css/base.css" rel="stylesheet" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="/assets/js/html5shiv.js"></script>
-        <script src="/assets/js/main.min.js"></script>
+        <script src="/assets/js/main.js"></script>
         {% block extra-head %}{% endblock %}
 	</head>
 	<body>
+		<div id='wrapper'>
+			<div id="logo">
+				<a id="home" href="#"><img src="/assets/images/jkLogo.png" /></a>
+			</div>
+			<div>
+				<div id="slideshow-container">
+					<img src="/assets/images/image1.jpg" alt="not found" /> 
+					<img src="/assets/images/image2.jpg" alt="not found" />
+	                <img src="/assets/images/image3.jpg" alt="not found" />
+					<img src="/assets/images/image4.jpg" alt="not found" />
+					<img src="/assets/images/image5.jpg" alt="not found" />
+					<img src="/assets/images/image6.jpg" alt="not found" />
+					<img src="/assets/images/image7.jpg" alt="not found" />
+				</div>
+				<nav>
+	                {% block nav-ul %}
+	                    <ul>
+	                        <li id="selected"><a href="/">Home</a><!-- this style seems so wrong lol -->
+	                        {% get_sections %}
+	                        {% for section in section_list %}
+	                            <li><a href="/section/{{ section.url }}/">{{ section }}</a>
+	                        {% endfor %}
+	                        <!-- <li><a href='/kustomz'>Kustomz</a></li> -->
+	                        <li><a href="/story/">Our Story</a>
+	                    </ul>
+	                {% endblock %}
+				</nav>
+				<div id="recent-container">
+					{% block content %}{% endblock %}
+				</div>
+			</div>
+		</div>
+		{% comment %}
 		<div id="wrapper">
 			<div id="logo">
 				<a id="home" href="#"><img src="/assets/images/jkLogo.png" /></a>
@@ -30,15 +63,6 @@
                     </ul>
                 {% endblock %}
 			</nav>
-			<div id="slideshow-container">
-				<img src="/assets/images/image1.jpg" alt="not found" />
-                <img src="/assets/images/image2.jpg" alt="not found" />
-                <img src="/assets/images/image3.jpg" alt="not found" />
-				<img src="/assets/images/image4.jpg" alt="not found" />
-				<img src="/assets/images/image5.jpg" alt="not found" />
-				<img src="/assets/images/image6.jpg" alt="not found" />
-				<img src="/assets/images/image7.jpg" alt="not found" />
-			</div>
 			<div id="recent-container">
 				{% block content %}{% endblock %}
 			</div>
@@ -60,13 +84,10 @@
                 <div class="clear">&nbsp;</div>
             </footer>
 		</div>
+		{% endcomment %}
         <script>
-			$(window).load(function(){
-				$('#slideshow-container').css('height', $('#slideshow-container img').height() + 'px');
+	        $(function(){
 				$('#slideshow-container').slideshow();
-			});
-			$(window).resize(function(){
-				$('#slideshow-container').css('height', $('#slideshow-container img').height() + 'px');
 			});
         </script>
 		<script>
