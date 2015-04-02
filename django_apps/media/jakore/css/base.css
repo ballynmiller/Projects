@@ -154,10 +154,6 @@ nav ul li:hover,
 	top:-3px;
 }*/
 
-#recent-container{
-	text-align: center;
-}
-
 .row{
 	display: flex;
 	justify-content: center;
@@ -167,6 +163,7 @@ nav ul li:hover,
 	background: #fff;
 	margin: 20px;
 	padding: 10px;
+	text-align: center;
 	width: 300px;
 }
 
