@@ -1,4 +1,17 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load custom %}
+
+{% block nav-ul %}
+    <ul>
+        <li><a href="/">Home</a><!-- this style seems so wrong lol -->
+        {% get_sections %}
+        {% for section in section_list %}
+            <li><a href="/section/{{ section.url }}/">{{ section }}</a>
+        {% endfor %}
+        <!-- <li><a href='/kustomz'>Kustomz</a></li> -->
+        <li id='selected'><a href="/story/">Our Story</a>
+    </ul>
+{% endblock %}
+
 {% block content %}
 	{{flatpage.content|safe}}
 {% endblock %}

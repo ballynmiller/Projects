@@ -29,52 +29,64 @@ html, body{
 }
 img{
     border:none;
+    height: 100%;
 	width:100%;
 }
 
 #wrapper{
-	width:80%;
-	max-width: 1024px;
-	margin:auto;
-	padding:10px 0;
+	display: flex;
+	flex-direction: column;
 }
 footer,
-nav{
+{
 	background: #000;
 }
 footer{
     height:35px;
+}
+nav{
+	background: #1c1c1c;
+	flex: 1;
 }
 nav ul li{
 	display:inline-block;
 	padding:15px 7px;
 }
 nav ul li a{
-	color:#FFD700;
+	color:#DAA520;
 	font-family: 'Lobster Two', cursive;
 	font-size: 1.3em;
 	text-decoration: none;
+}
+#nav-links{
+	display: flex;
+	flex-direction: row;
+}
+#nav-links .left,
+#nav-links .right{
+	flex: 1 0 50%;
+	font-size: 18em;
+}
+#nav-links .right{
+	text-align: right;
 }
 nav ul li:hover, 
 #selected{
 	background: #333;
 }
-#recent-container{
-	background: #fff;
-	padding:5px 0;
-}
+
 #slideshow-container{
-	border-bottom:4px solid #000;
-	position:relative;
+	background-position: center;
+	background-size: cover;
+	height: 450px;
+	flex: 1;
 }
 #slideshow-container img{
-	display:none;
-	position:absolute;
-	top:0px;
+	display: none;
 }
 #slideshow-navigation{
 	color:rgba(255,255,255,0.7);
-	display:none;
+	/*display:none;*/
 	font-size: 18.75em;
 	position: relative;
 	top:40px;
@@ -85,26 +97,41 @@ nav ul li:hover,
 	cursor:pointer;
     font-family: 'lintelregular';
 }
+
 #prev-icon{
 	float:left;
 }
+
+#item-detail{
+	background: #fff;
+	margin: 10px auto;
+	padding: 20px;
+	width: 80%;
+}
+
 #next-icon{
 	float:right;
-}#logo{
-	width:13.28125%;
 }
 .clear{
 	clear:both;
 }
-.product{
+#logo{
+	background: #fff;
+	height: 60px;
+	padding: 10px;
+}
+#logo img{
+	width: auto;
+}
+/*.product{
     float:left;
     width:24%;
     margin:5px .5% 10px;
     min-height:150px;
     position:relative;
     text-align: center;
-}
-.product a{
+}*/
+/*.product a{
     color:#000;
     text-decoration: none;
 }
@@ -125,10 +152,33 @@ nav ul li:hover,
 .product-title{
 	position: relative;
 	top:-3px;
+}*/
+.row{
+	display: flex;
+	justify-content: space-around;
 }
-.price{
-	background: rgba(255, 215, 0, 0.75);
+
+.row div.item{
+	background: #fff;
+	margin: 20px;
+	padding: 10px;
+	width: 300px;
 }
+
+.row div.item a:hover{
+	text-decoration: underline;
+}
+
+.row div.item .title{
+	color: #DAA520;
+	text-decoration: none;
+}
+
+.row div.item .price{
+	color: #000;
+	text-decoration: none;
+}
+
 .social{
 	color:#FFD700;
 	font-size:1.5em;
@@ -145,7 +195,7 @@ nav ul li:hover,
     background: url(/assets/images/soldoutBg.png) no-repeat;
 }
 #section-title{
-    margin-left:5px;
+    padding: 20px 20px 0;
 }
 #social-container{
     float:left;
@@ -210,9 +260,14 @@ footer{
         width:80%;
         margin:auto 10%;
 	}
-	#logo{
-		width:35%;
+
+	.row{
+		flex-direction: column;
 	}
+	.item{
+		flex: 1 0 auto;
+	}
+
 	nav ul li{
 		display:block;
         padding:0;

@@ -23,23 +23,19 @@
 {% block content %}
 <div id="recent-container">
     <div id="section-title">{{ section.name }}</div>
-    <div class="product-row">
-        {%  for i in item_list %}
-            <div class="product">
-                <a href="/detail/{{ i.id }}/">
-                    <img src="{{ MEDIA_URL }}{{ i.get_first_image.image }}" alt="not found" width="315" height="300" />
-                    <div class="product-icon{% if not i.oos %} price {% else %} soldout {% endif %}">
-                        {% if i.oos %}
-                            Soldout
-                        {% else %}
-                            {{ i.price }}
-                        {% endif %}
-                    </div>
-                    <div class="product-title">{{ i.name }}</div>
-                </a>
-            </div>
-        {% endfor %}
-        <div class="clear"></div>
+    <div class='row'>
+    {% for item in item_list %}
+        <div class='item'>
+            <img src="{{item.get_first_image.image.url}}" alt="{{item.name}}" />
+            <h4>
+                <a href="/detail/{{ item.id }}" class="title">{{item.name}}</a>
+            </h4>
+            <strong class='price'>{{item.price}}</strong>
+        </div>
+        {% if forloop.counter|divisibleby:"4" %}
+            </div><div class='row'>
+        {% endif %}
+    {% endfor %}
     </div>
 </div>
 {% endblock %} 

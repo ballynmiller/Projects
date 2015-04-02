@@ -40,7 +40,7 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	{% get_price item %}
-	<div style="margin-top:10px;">
+	<div id='item-detail'>
 		<div id="left-col">
 			<div id="image_container">
 				<img id="big_image" src="{{item.get_first_image.image.url}}" alt="{{item.name}}"/>
