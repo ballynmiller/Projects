@@ -29,7 +29,7 @@ def contact(request):
         if c.is_valid():
             mail = EmailMessage(
                 "Custom Order",
-                c.cleaned_data["description"],
+                "Email From: {0}\n".format(c.cleaned_data["email"]) + c.cleaned_data["description"],
                 "noreply@illustrious-designs.com",
                 [settings.EMAIL_ADDRESS]
             )
