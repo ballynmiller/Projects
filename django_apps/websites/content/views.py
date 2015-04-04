@@ -36,7 +36,7 @@ def contact(request):
 
             image = request.FILES['image']
 
-            mail.attach(image.name, image.read(), image.content_type)
+            # mail.attach(image.name, image.read(), image.content_type)
             # send it
             mail.send()
 
