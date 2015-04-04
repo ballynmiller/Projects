@@ -7,7 +7,7 @@ class DJANGO_SETTINGS:
         'REGISTER':False, 
         'SHOPPING':False,
         'EMAIL_ADDRESS':'#',
-        'EMAIL_HOST': 0.0.0.0,
+        'EMAIL_HOST': 'localhost',
         'EMAIL_PORT':25,
         'SHOPPING':False,
         'SUBSCRIBER_FORM':False,
