@@ -7,7 +7,7 @@
 			var self = this; 
 
 			changePicture = function(){
-				if(index >= imgs.length - 1) index = 0;
+				if(index == imgs.length) index = 0;
 				$(self).css('background-image', 'url(' + imgs[index++].src + ')');
 			}
 

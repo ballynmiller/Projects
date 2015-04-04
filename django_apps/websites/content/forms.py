@@ -4,15 +4,11 @@ from django.contrib.auth.forms import UserCreationForm
 
 from websites.contact.models import Subscriber,Contact
 
-SUBJECTS = (
-    ('Feedback','Feedback'),
-    ('Question','Question'),
-)
-
 class ContactForm(forms.Form):
     name=forms.CharField()
-    subject=forms.ChoiceField(choices=SUBJECTS,)
-    message=forms.CharField(widget=forms.Textarea)
+    email=forms.EmailField()
+    image=forms.ImageField()
+    description=forms.CharField()
 
 class UserForm(UserCreationForm):
     firstname=forms.CharField(label='First Name', max_length=30)

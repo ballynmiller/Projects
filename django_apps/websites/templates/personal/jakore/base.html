@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.12.0/build/cssnormalize-context/cssnormalize-context-min.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans|Lobster+Two' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//yui.yahooapis.com/pure/0.5.0/pure-min.css">
 		<link href="/assets/css/base.css" rel="stylesheet" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="/assets/js/html5shiv.js"></script>
@@ -20,13 +21,8 @@
 			</div>
 			<div>
 				<div id="slideshow-container">
-					<img src="/assets/images/image1.jpg" alt="not found" /> 
-					<img src="/assets/images/image2.jpg" alt="not found" />
-	                <img src="/assets/images/image3.jpg" alt="not found" />
-					<img src="/assets/images/image4.jpg" alt="not found" />
-					<img src="/assets/images/image5.jpg" alt="not found" />
-					<img src="/assets/images/image6.jpg" alt="not found" />
-					<img src="/assets/images/image7.jpg" alt="not found" />
+					<img src="/assets/images/slideshow/image1.jpg" alt="not found" /> 
+					<img src="/assets/images/slideshow/image2.jpg" alt="not found" /> 
 				</div>
 				<nav>
 	                {% block nav-ul %}
@@ -36,7 +32,7 @@
 	                        {% for section in section_list %}
 	                            <li><a href="/section/{{ section.url }}/">{{ section }}</a>
 	                        {% endfor %}
-	                        <!-- <li><a href='/kustomz'>Kustomz</a></li> -->
+	                        <li><a href='/kustomz'>Kustomz</a></li>
 	                        <li><a href="/story/">Our Story</a>
 	                    </ul>
 	                {% endblock %}
