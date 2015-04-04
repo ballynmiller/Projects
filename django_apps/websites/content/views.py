@@ -7,7 +7,7 @@ from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.conf import settings
 
 #import oauth2 as oauth 
@@ -25,13 +25,25 @@ def index(request):
 @csrf_protect
 def contact(request):
     if request.POST:
-        c = ContactForm(request.POST)
+        c = ContactForm(request.POST, request.FILES)
         if c.is_valid():
-            send_mail(c.cleaned_data['subject'], c.cleaned_data['message'], "noreply@illustrious-designs.com",
-                      [settings.EMAIL_ADDRESS, ], fail_silently=True)
+            mail = EmailMessage(
+                "Custom Order",
+                c.cleaned_data["description"],
+                "noreply@illustrious-designs.com",
+                [settings.EMAIL_ADDRESS]
+            )
+
+            image = request.FILES['image']
+
+            mail.attach(image.name, image.read(), image.content_type)
+            # send it
+            mail.send()
+
             return HttpResponseRedirect("/")
         else:
             form = c
+        print c.errors
     else:
         form = ContactForm()
     return render_to_response("contact.html", {'form': form, }, RequestContext(request), )

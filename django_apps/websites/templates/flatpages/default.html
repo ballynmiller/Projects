@@ -1,5 +1,13 @@
 {% extends "base.html" %}{% load custom %}
 
+{% block extra-head %}
+    <style>
+        #slideshow-container{
+            display:none;
+        }
+    </style>
+{% endblock %}
+
 {% block nav-ul %}
     <ul>
         <li><a href="/">Home</a><!-- this style seems so wrong lol -->
@@ -7,11 +15,21 @@
         {% for section in section_list %}
             <li><a href="/section/{{ section.url }}/">{{ section }}</a>
         {% endfor %}
-        <!-- <li><a href='/kustomz'>Kustomz</a></li> -->
+        <li><a href='/kustomz'>Kustomz</a></li>
         <li id='selected'><a href="/story/">Our Story</a>
     </ul>
 {% endblock %}
 
 {% block content %}
-	{{flatpage.content|safe}}
+    <div class='row'>
+        <div id='owner'>
+            <img src='/assets/images/owner.jpg' alt='not_found' />
+            <span id='owner-name'>Kendra Walton</span>
+        </div>
+        <div>
+            <div id='white-background'>
+                {{flatpage.content|safe}}
+            </div>
+        </div>
+    </div>
 {% endblock %}

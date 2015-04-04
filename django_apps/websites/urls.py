@@ -9,7 +9,7 @@ from django.conf import settings
 
 urlpatterns = patterns('',
      url(r'^admin/', include(admin.site.urls)),
-     # url(r'^contact/$','websites.content.views.contact'),
+     url(r'^kustomz/$','websites.content.views.contact'),
 )
 
 if settings.REGISTER: 
@@ -37,15 +37,12 @@ if settings.LANDING:
         url(r'^home/$', views.index)
     )
 
-#if settings.TRADITIONAL:
-#    urlpatterns += patterns()
-
 else: 
     urlpatterns += patterns('',
         url(r'^$', views.index)
     )
 
-# if settings.DEBUG:
-#     urlpatterns += patterns('',
-#         (r'^assets/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/Users/ball6862/Github/Sites/django_apps/media/jakore/", 'show_indexes':True}),
-# )
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^assets/(?P<path>.*)$', 'django.views.static.serve', {'document_root': "/Users/ball6862/Github/Sites/django_apps/media/jakore/", 'show_indexes':True}),
+)

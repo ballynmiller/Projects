@@ -16,6 +16,7 @@
         {% for s in section_list %}
             <li{% if section == s %} id="selected" {% endif %}><a href="/section/{{ s.url }}/">{{ s }}</a>
         {% endfor %}
+        <li><a href='/kustomz'>Kustomz</a></li>
         <li><a href="/story/">Our Story</a>
     </ul>
 {% endblock %}

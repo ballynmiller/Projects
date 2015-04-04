@@ -21,10 +21,44 @@
 {% endblock %}
 
 {% block content %}
-	<form action="/contact/" method="post">{% csrf_token %}
-		<table>
-			{{form}}
-		</table>
-		<input type="submit" value="Submit"/>
-	</form>
+    <div class='row'>
+        {% include "_examples.html" %}
+        <div id='request-container' style="flex: 1;">
+            <div style="margin-top: 15px;">
+                <h2 class='gold'>Request A Custom Design:</h2>
+                <p>
+                    Here at Jakore' we have the appropriate machines ready to take on all your custom needs. We offer full-grading and sizing in addition to light to full custom cut and sew projects. With us it takes away the headache that comes with creating custom pieces. Simply send us a picture of the product with details of what you want changed and we take it from there. All custom orders take 7-10 business days.
+                </p>
+                <form action='/kustomz/' enctype="multipart/form-data" class="pure-form pure-form-aligned" method='post'>
+                    {% csrf_token %}
+                    <fieldset>
+                        <div class="pure-control-group">
+                            {{form.errors.name}}
+                            <label for="name">Name</label>
+                            <input type="text" name="name" placeholder="Enter Full Name" />
+                        </div>
+                        <div class="pure-control-group">
+                            {{form.errors.email}}
+                            <label for="email">Email Address</label>
+                            <input type="text" name="email" placeholder="Enter email address" />
+                        </div>
+                        <div class="pure-control-group">
+                            {{form.errors.image}}
+                            <label for="image">Enter Example Image</label>
+                            <input type="file" name="image" />
+                        </div>
+                        <div class="pure-control-group">
+                            {{form.errors.description}}
+                            <label for="description"></label>
+                            <textarea name="description" placeholder="Describe the modifications you would like" rows="5" cols="40"></textarea>
+                        </div>
+                        <div class="pure-control-group" style="text-align: right;">
+                            <input type="submit" class="pure-button"/>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+
