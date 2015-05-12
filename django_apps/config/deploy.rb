@@ -25,7 +25,7 @@ end
 before :deploy, :kill_nginx do
 	on roles(:all) do
 		if test("[ -f /tmp/run/jakore.pid ]")
-			execute "kill -9 $(cat /tmp/run/jakore.pid)"
+			execute "kill -HUP $(cat /tmp/run/jakore.pid)"
 		end
 	end
 end
@@ -61,7 +61,9 @@ namespace :maintenance do
 			end
 			
 			# update settings file
-			execute "sed -i 's/{PASSWORD}/CHANGE_ME/g' #{current_path}/django_apps/websites/jakore_settings.py"
+			execute "sed -i 's/{PASSWORD}/84||yn23/g' #{current_path}/django_apps/websites/jakore_settings.py"
+			execute "sed -i 's/{EMAIL_HOST}/ballyn.miller@gmail.com/g' #{current_path}/django_apps/websites/jakore_settings.py"
+			execute "sed -i 's/{EMAIL_PASSWORD}/ccsphhmagmdvqlxo/g' #{current_path}/django_apps/websites/jakore_settings.py"
 
 			#update jakore file
 			execute "sed -i 's/{ASSETS_PATH}/\\/var\\/www\\/websites\\/current\\/django_apps\\/media/g' /etc/nginx/sites-enabled/jakore"
@@ -79,7 +81,7 @@ namespace :maintenance do
 	task :stop do
 		on roles(:web) do
 			if test("[ -f /var/run/jakore.pid ]")
-				execute "kill -9 $(cat /var/run/jakore.pid)"
+				execute "kill -HUP $(cat /var/run/jakore.pid)"
 			end
 		end
 	end
