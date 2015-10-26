@@ -1,0 +1,37 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "Portfolio Application for Malorie Polk",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.ballynmiller/projects/malorie"
+  },
+  "keywords": [
+    "portfolio",
+    "malorie",
+    "alterations",
+    "design",
+    "fashion",
+    "custom"
+  ],
+  "author": "Ballyn Miller",
+  "license": "ISC",
+  "dependencies": {
+    "pm2": "^0.15.7"
+  },
+  "devDependencies": {
+    "babelify": "^6.4.0",
+    "browserify": "^11.2.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-uglify": "^1.4.2",
+    "less": "^2.5.3",
+    "react": "^0.14.0",
+    "uglify-js": "^2.5.0"
+  }
+}
