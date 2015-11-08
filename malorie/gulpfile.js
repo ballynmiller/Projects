@@ -29,7 +29,7 @@ gulp.task('synchronize', function(){
         .pipe(gulp.dest('dist/js'))
 });
 
-gulp.task('server', ['watch'], function(){
+gulp.task('server', function(){
     nodemon({
         script: 'server.js'
     });

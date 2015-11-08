@@ -1,13 +1,14 @@
-import React from 'react';
+var $ = require('jquery');
 var rDom = require('react-dom');
+var React = require('react');
 
-class Test extends React.Component {
+class Portfolio extends React.Component {
     render(){
-        return <div>Yes I am Ballyn Sheesh you messing up dawg!</div>;
+        return <div>Filler Text</div>;
     }
 }
 
 rDom.render(
-    <Test />,
-    document.getElementById('app')
+    <Portfolio />,
+    $('#app').get(0)
 );
