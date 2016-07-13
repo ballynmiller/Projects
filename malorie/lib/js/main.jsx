@@ -1,14 +1,12 @@
 var $ = require('jquery');
-var rDom = require('react-dom');
-var React = require('react');
+import React, {Component} from 'react';
+import {render} from 'react-dom';
+
 
 class Portfolio extends React.Component {
     render(){
-        return <div>Filler Text</div>;
+        return <div>Hi</div>;
     }
 }
 
-rDom.render(
-    <Portfolio />,
-    $('#app').get(0)
-);
+render(<Portfolio />, $('#app').get(0))

@@ -6,7 +6,7 @@ app.use(express.static('dist'));
 
 // Response is index.html file
 app.get("/", function(req, res){
-    res.sendFile("index.html", { root: __dirname });
+    res.sendFile("lib/index.html", { root: __dirname });
 });
 
 // run server
