@@ -17,11 +17,12 @@ gulp.task('synchronize', function(){
         browserify({
             debug: true,
             fullPaths: false,
-            entries: ['lib/js/main.jsx'],
+            entries: ['lib/js/app.jsx'],
             extensions: ['.jsx'],
             output: ['dist/js'],
-            transform: [templates, babelify]
         })
+        .transform(templates)
+        .transform(babelify)
     );
 
     return stream.bundle()
@@ -29,7 +30,7 @@ gulp.task('synchronize', function(){
             console.log(err);
             this.emit('end');
         })
-        .pipe(source('main.js'))
+        .pipe(source('app.js'))
         .pipe(buffer())
         .pipe(gulp.dest('dist/js'));
 });
@@ -76,9 +77,8 @@ gulp.task('browser-sync', function(){
 gulp.task('watch', ['browser-sync'], function(){
     gulp.watch('lib/**/*.less', ['convert-less']);
     gulp.watch('lib/**/*.html', ['html']);
-    gulp.watch('lib/**/*.rt', ['rt']);
     gulp.watch('lib/**/*.{png|jpg|jpeg}', ['images']);
-    gulp.watch('lib/**/*.jsx', ['synchronize']);
+    gulp.watch(['lib/**/*.jsx', 'lib/**/*.rt'], ['synchronize']);
 });
 
 gulp.task('default', ['synchronize', 'watch', 'html', 'images', 'server']);
